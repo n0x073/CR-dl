@@ -1,4 +1,4 @@
-import got, { AgentByProtocol } from "got";
+import got from "got";
 import { Readable } from "stream";
 import { RequesterCdn } from "../types/Requester";
 import * as tunnel from "tunnel";
@@ -17,7 +17,7 @@ function getProxyAuth(proxyURL: URL): string | undefined {
 
 export default function (proxy?: string, retry?: number): RequesterCdn {
     const proxyURL = proxy ? new URL(proxy) : undefined;
-    let agent: AgentByProtocol | undefined;
+    let agent: object | undefined;
     if (proxyURL) {
         if (proxyURL.protocol == "http:") {
             agent = {
