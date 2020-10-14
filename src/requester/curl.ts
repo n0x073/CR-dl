@@ -1,4 +1,5 @@
 import request from "request";
+import fs from "fs";
 import { Requester } from "../types/Requester";
 
 const querystring = require('querystring');
@@ -11,6 +12,9 @@ export default function (cookies: string, proxy?: string): Requester {
                 const curl = new Curl();
                 curl.setOpt('URL', url);
                 curl.setOpt('FOLLOWLOCATION', true);
+                if (fs.existsSync("cacert.pem")) {
+                    curl.setOpt('caInfo', "cacert.pem");
+                }
                 curl.setOpt(Curl.option.HTTPHEADER, [
                     "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko",
                 ]);
@@ -34,6 +38,9 @@ export default function (cookies: string, proxy?: string): Requester {
                 const curl = new Curl();
                 curl.setOpt('URL', url);
                 curl.setOpt('FOLLOWLOCATION', true);
+                if (fs.existsSync("cacert.pem")) {
+                    curl.setOpt('caInfo', "cacert.pem");
+                }
                 curl.setOpt(Curl.option.HTTPHEADER, [
                     "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko",
                 ]);
