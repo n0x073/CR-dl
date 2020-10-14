@@ -1,5 +1,5 @@
 
-import cloudscraper from "../requester/cloudscraper";
+import curl from "../requester/curl";
 import * as request from "request";
 import got from "../requester/got";
 import { RuntimeError, UserInputError } from "../Errors";
@@ -43,7 +43,7 @@ export class CrDl {
         if (options && options.requester) {
             this._requester = options.requester;
         } else {
-            this._requester = cloudscraper(request.jar());
+            this._requester = curl("cookies.txt");
         }
 
         if (options && options.requesterCdn) {

@@ -1,5 +1,5 @@
 import got from "../requester/got";
-import cloudscraper from "../requester/cloudscraper";
+import curl from "../requester/curl";
 import * as request from "request";
 import * as fs from "fs";
 import { Requester, RequesterCdn } from "../types/Requester";
@@ -120,8 +120,8 @@ export function saveCookies(options: { cookies: string }, createFile?: boolean):
 
 }
 
-export function getRequester(options: { proxy?: string }): Requester {
-    return cloudscraper(cookies, options.proxy);
+export function getRequester(options: { cookies: string, proxy?: string }): Requester {
+    return curl(options.cookies, options.proxy);
 }
 
 export function getRequesterCdn(options: { proxyCdn?: string }): RequesterCdn {
