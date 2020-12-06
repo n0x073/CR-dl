@@ -1,5 +1,4 @@
 # CR-dl
-*Read this in other language*: [Deutsch](README.de.md)
 
 CR-dl is a tool to quickly download anime from [Crunchyroll](http://www.crunchyroll.com/)
 
