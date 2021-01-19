@@ -1,4 +1,5 @@
 # CR-dl
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors)
 
 CR-dl is a tool to quickly download anime from [Crunchyroll](http://www.crunchyroll.com/)
 
